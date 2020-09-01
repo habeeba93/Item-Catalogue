@@ -1,0 +1,15 @@
+Tasks
+-----------------------
+- Learn about C# delegates and lambda functions
+- Figure out how to connect this console app to a database.
+- Load and save inventory entries (items) from the database.
+- Figure out how to convert the project into a webpage.
+- On the webpage, make it so a person can sign up for an account and allow them to add/edit/remove their inventory entries.
+- On the webpade, make it so a persons inventory items can be quickly reviewed and sorted from some sort of grid that will allow filtering of existing items.
+
+--Far future
+- Hook up an api to the site to allow for basic item details to be quickly pulled if an identifiying id is known (barcode, ASIN, ISBN)
+- Allow users to set up trades of their inventory items with other users.
+
+
+

@@ -1,0 +1,6 @@
+Notes
+-----------------------
+- To commit to git
+	Switch to "Team Explorer" (next to Solution Explorer)
+	Click the "Home" icon.
+	Click "Changes"
