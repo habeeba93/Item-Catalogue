@@ -4,3 +4,7 @@ Notes
 	Switch to "Team Explorer" (next to Solution Explorer)
 	Click the "Home" icon.
 	Click "Changes"
+	Enter a message to descibe the commits being made
+	Click "Commit All" once the button has been enabeled (after a message has been added)
+	After commiting, click "Home" again and then "Sync"
+	Click "Push" (should be enabaled if commits are present)
