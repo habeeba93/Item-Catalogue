@@ -1,4 +1,5 @@
 ﻿using System;
+using ExtensionMethods;
 
 namespace Item_Catalogue
 {
@@ -6,7 +7,6 @@ namespace Item_Catalogue
     {
         static void Main(string[] args)
         {
-
             var newItemName = "Gravity Rush Remastered - PlayStation 4";
             var newItemPurchasePrice = 29.99m;
             var newItemPurchaseDate = new DateTime(2016, 1, 25);
@@ -16,8 +16,8 @@ namespace Item_Catalogue
 
             Item newItem = new Item(newItemName, newItemPurchasePrice, newItemPurchaseDate, newItemPurchasedFrom, newItemEdition, newItemIsDigital);
 
-            newItem.addItemIdentifier(IdentifierType.Barcode, "7 11719 50379 8");
-            newItem.addItemIdentifier(IdentifierType.ASIN, "B017Y97NHM");
+            newItem.addItemIdentifier(IdentifierType.Barcode, "7 11719 50379 8".removeSpaces());
+            newItem.addItemIdentifier(IdentifierType.ASIN, "B017Y97NHM".removeSpaces());
 
             Console.WriteLine(newItem);
 
