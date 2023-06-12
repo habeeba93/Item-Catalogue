@@ -13,8 +13,9 @@ namespace Item_Catalogue
             var newItemPurchasedFrom = "Amazon";
             var newItemEdition = "Standard";
             var newItemIsDigital = false;
+            var newItemProductType = ProductType.VideoGame;
 
-            Item newItem = new Item(newItemName, newItemPurchasePrice, newItemPurchaseDate, newItemPurchasedFrom, newItemEdition, newItemIsDigital);
+            Item newItem = new Item(newItemName, newItemPurchasePrice, newItemPurchaseDate, newItemPurchasedFrom, newItemEdition, newItemIsDigital, newItemProductType);
 
             newItem.addItemIdentifier(IdentifierType.Barcode, "7 11719 50379 8".removeSpaces());
             newItem.addItemIdentifier(IdentifierType.ASIN, "B017Y97NHM".removeSpaces());

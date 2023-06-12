@@ -17,6 +17,17 @@ namespace Item_Catalogue
          , ASIN = 2
         // Other?
     }
+    enum ProductType
+    {
+        VideoGame = 0
+        , BoardGame
+        , Book = 1
+        , ComicBook = 2
+        , Manga = 3
+        , VinylRecord = 4
+        , CD = 5
+        // Other?
+    }
 
     class ItemIdentifier
     {
@@ -34,18 +45,14 @@ namespace Item_Catalogue
     {
         public string Name { get; set; }
         public decimal PurchasePrice { get; set; }
-        enum ProductType
-        {
-            Game = 0
-            , Book = 1
-            // Other?
-        }
 
         private List<ItemIdentifier> ItemIdentifiers;
+
         public DateTime PurchaseDate { get; set; }
         public string PurchasedFrom { get; set; }
         public string Edition { get; set; }
         public bool IsDigital { get; set; }
+        public ProductType ProductType { get; set; }
         //Platform? (PS4, Steam, Kindle, Etc?)
 
         //constructor
@@ -55,7 +62,7 @@ namespace Item_Catalogue
             ItemIdentifiers = new List<ItemIdentifier>();   //need to give this a default so we don't get null ref if a method using it is called before it's actually initialized
         }
 
-        public Item(string name, decimal purchasePrice, DateTime purchaseDate, String purchasedFrom, string edition, bool isDigital)
+        public Item(string name, decimal purchasePrice, DateTime purchaseDate, String purchasedFrom, string edition, bool isDigital, ProductType productType)
         {
             Name = name;
             PurchasePrice = purchasePrice;
@@ -63,6 +70,7 @@ namespace Item_Catalogue
             PurchasedFrom = purchasedFrom;
             Edition = edition;
             IsDigital = isDigital;
+            ProductType = productType;
 
             ItemIdentifiers = new List<ItemIdentifier>();   //need to give this a default so we don't get null ref if a method using it is called before it's actually initialized
         }
@@ -109,11 +117,12 @@ namespace Item_Catalogue
 
             string returnString = "";
             returnString = String.Format("Name: {0} \n" +
-                "Purchase price: {1} \n" +
-                "Purchase date: {2} \n" +
-                "Purchased from: {3} \n" +
-                "Edition: {4} \n" +
-                "Is digital? {5} \n", this.Name, this.PurchasePrice, this.PurchaseDate.ToShortDateString(), this.PurchasedFrom, this.Edition, this.IsDigital);
+                "Product type: {1} \n" +
+                "Purchase price: {2} \n" +
+                "Purchase date: {3} \n" +
+                "Purchased from: {4} \n" +
+                "Edition: {5} \n" +
+                "Is digital? {6} \n", this.Name, this.ProductType, this.PurchasePrice, this.PurchaseDate.ToShortDateString(), this.PurchasedFrom, this.Edition, this.IsDigital);
 
             returnString += getItemIdentifiers();
 
